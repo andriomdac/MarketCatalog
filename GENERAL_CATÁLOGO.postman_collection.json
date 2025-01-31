@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "128d86fe-20b9-4d70-bde6-ca1076c9b53b",
+		"name": "GENERAL_CATÁLOGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38134200"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "GET TOKEN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"joão\",\n    \"password\": \"joao1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/token/"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": ""
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "BRANDS",
+			"item": [
+				{
+					"name": "GET BRANDS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/brands/"
+					},
+					"response": []
+				},
+				{
+					"name": "DETAIL BRAND",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MjQ4NjE5LCJpYXQiOjE3MzgxNjIyMTksImp0aSI6IjhlNDdhOTFjM2RmMzRmMWM5ZWI1YWMwMWI1MTM2MDJiIiwidXNlcl9pZCI6Mn0.jN-_eaOl6-b3sitrD-2GmehIab_YO0L-pA5tskjip3g"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/brands/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE BRAND",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bauducco\",\n    \"description\": \"Exemplo de descrição\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/brands/"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BRAND",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Nestle\",\n        \"description\": null\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/brands/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BRAND",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/brands/8/"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": ""
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "CATEGORIES",
+			"item": [
+				{
+					"name": "GET CATEGORIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/categories/"
+					},
+					"response": []
+				},
+				{
+					"name": "DETAIL CATEGORY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/categories/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CATEGORY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Higiene Pessoal\",\n    \"description\": \"Papel Higiênico, Sabonete etc...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/categories/"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CATEGORY",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"Alimentos\",\n    \"description\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/categories/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CATEGORY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/categories/1/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MARKETS",
+			"item": [
+				{
+					"name": "MARKET PRODUCTS",
+					"item": [
+						{
+							"name": "PRICES",
+							"item": [
+								{
+									"name": "CREATE MARKET ITEM PRICE",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"price\": 25.00\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://127.0.0.1:8000/markets/2/products/18/prices/"
+									},
+									"response": []
+								},
+								{
+									"name": "GET MARKET ITEM PRICE HISTORY",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "http://127.0.0.1:8000/markets/2/products/18/prices/"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "GET MARKET PRODUCTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:8000/api/v1/markets/4/products/"
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE MARKET PRODUCT",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:8000/api/v1/markets/4/products/"
+							},
+							"response": []
+						},
+						{
+							"name": "DETAIL MARKET PRODUCT",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:8000/api/v1/markets/2/products/18/"
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE MARKET PRODUCT",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product\": 3,\n    \"market\": 4,\n    \"price\": 37\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:8000/api/v1/markets/3/products/7/"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE MARKET PRODUCT",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://127.0.0.1:8000/api/v1/markets/2/products/21/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET MARKETS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/markets/"
+					},
+					"response": []
+				},
+				{
+					"name": "DETAIL MARKET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/markets/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE MARKET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MjgyMzgxLCJpYXQiOjE3MzgxOTU5ODEsImp0aSI6IjMzNTc0OTMxZDZlNzQ5OTU5YTQ5MmI2MGNmMTY2ZGQ1IiwidXNlcl9pZCI6Mn0.6Dl_FEkn1-j5YPpBFQzY9ss0IXrJIxhWAozazhPPjSk"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mercadinho Grego\",\n    \"description\": \"Papel Higiênico, Sabonete etc...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/markets/"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE MARKET",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mercadinho Santos\",\n    \"description\": \"Produtos Alimentícios em geral\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/categories/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE MARKET",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/markets/1/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS",
+			"item": [
+				{
+					"name": "GET PRODUCTS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "DETAIL PRODUCT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/products/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PRODUCT",
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"PRODUTO EXEMPLO\",\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PRODUCT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mercadinho Santos\",\n    \"description\": \"Produtos Alimentícios em geral\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/v1/products/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/v1/products/1/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
