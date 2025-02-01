@@ -16,4 +16,3 @@ class ProductRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
 
 
-

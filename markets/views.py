@@ -13,6 +13,7 @@ from .serializers import MarketSerializer
 from .utils import get_market_item_current_price, get_market_item_or_none
 import json
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from products.views import ProductListCreate
 
 
 class MarketListCreate(ListCreateAPIView):
@@ -27,7 +28,7 @@ class MarketRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
     serializer_class = MarketSerializer
 
 
-class MarketItemListCreate(ListCreateAPIView):
+class _MarketItemListCreate(ListCreateAPIView):
     """
     Handles listing and creating market items for a specific market.
     """
@@ -92,6 +93,13 @@ class MarketItemListCreate(ListCreateAPIView):
                 {"error": f"Unexpected error: {e}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+
+
+
+
+
+
 
 
 class MarketItemDetailDelete(RetrieveDestroyAPIView):
